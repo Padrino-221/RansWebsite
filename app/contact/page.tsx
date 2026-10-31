@@ -1,5 +1,13 @@
 import { RoutePageShell } from "@/components/RoutePageShell";
 import { getSiteContent } from "@/lib/site-content";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Rokteck IT Solutions",
+  description: "Talk with Rokteck IT Solutions about practical technology, managed IT support and digital solutions for your business.",
+  path: "/contact",
+});
 
 export default async function ContactPage() {
   const content = await getSiteContent();

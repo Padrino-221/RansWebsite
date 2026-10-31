@@ -2,6 +2,13 @@ import Link from "next/link";
 import { ContentIcon, SiteIcon } from "@/components/SiteIcon";
 import { RoutePageShell } from "@/components/RoutePageShell";
 import { getSiteContent } from "@/lib/site-content";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const page = (await getSiteContent()).detailPages.services;
+  return pageMetadata({ title: page.title, description: page.intro, path: "/service" });
+}
 
 export default async function ServicesPage() {
   const content = await getSiteContent();

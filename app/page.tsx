@@ -11,6 +11,18 @@ import { BlogSection } from "@/components/BlogSection";
 import { CTAMain } from "@/components/CTAMain";
 import { FooterSection } from "@/components/FooterSection";
 import { getSiteContent } from "@/lib/site-content";
+import { pageMetadata } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const content = await getSiteContent();
+  return pageMetadata({
+    title: "IT Support, Consulting & Technology Solutions",
+    description: content.hero.description,
+    path: "/",
+    image: `/${content.media.hero.team.replace(/^\//, "")}`,
+  });
+}
 
 export default async function HomePage() {
   const content = await getSiteContent();
