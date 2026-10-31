@@ -792,8 +792,22 @@ header.site-header .site-brand small { color: #4d5c76 !important; }
 /* Raise the foreground image without scaling it; keep mobile focused on copy and CTAs. */
 .hero-visual-person { transform: translateY(-34px) !important; }
 .hero-visual-stage { overflow: visible !important; }
+/* The background team photo is a circular portrait layer behind the foreground cutout. */
+.hero-visual-team {
+  right: 8% !important;
+  bottom: 7% !important;
+  width: clamp(300px, 36vw, 460px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
 /* Keep the decorative strokes behind the cutout so they cannot cross the subject's face. */
 .hero-visual-doodle { z-index: 1; }
+@media (max-width: 991px) and (min-width: 768px) {
+  .hero-visual-team { right: 12% !important; bottom: 5% !important; width: clamp(280px, 50vw, 420px) !important; }
+}
 @media (max-width: 767px) {
   .hero-visual-stage { display: none !important; }
 }
