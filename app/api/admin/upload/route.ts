@@ -1,9 +1,12 @@
 import { createHash, randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
+import sharp from "sharp";
 import { hasSameOrigin, isAdminAuthenticated } from "@/lib/admin-auth";
 
 export const runtime = "nodejs";
 const maxBytes = 10 * 1024 * 1024;
+const maxImagePixels = 40_000_000;
+const maxImageDimension = 1920;
 const extensions: Record<string, string> = {
   "image/jpeg": "jpg",
   "image/png": "png",
@@ -27,6 +30,26 @@ function cloudinarySignature(params: Record<string, string>, apiSecret: string) 
     .map((key) => `${key}=${params[key]}`)
     .join("&");
   return createHash("sha1").update(`${serialized}${apiSecret}`).digest("hex");
+}
+
+async function optimizeUpload(bytes: Uint8Array, contentType: string) {
+  const image = sharp(bytes, {
+    animated: true,
+    limitInputPixels: maxImagePixels,
+  });
+  const metadata = await image.metadata();
+  const exceedsMaxDimensions = (metadata.width ?? 0) > maxImageDimension || (metadata.height ?? 0) > maxImageDimension;
+  const optimized = await image
+    .rotate()
+    .resize({ width: maxImageDimension, height: maxImageDimension, fit: "inside", withoutEnlargement: true })
+    .webp({ quality: 80, alphaQuality: 90, effort: 4 })
+    .toBuffer();
+
+  if (exceedsMaxDimensions || optimized.length < bytes.length) {
+    return { bytes: optimized, contentType: "image/webp", extension: "webp" };
+  }
+
+  return { bytes: Buffer.from(bytes), contentType, extension: extensions[contentType] };
 }
 
 export async function POST(request: Request) {
@@ -53,11 +76,18 @@ export async function POST(request: Request) {
   const bytes = new Uint8Array(await file.arrayBuffer());
   if (!matchesImageSignature(file.type, bytes)) return NextResponse.json({ error: "The file contents do not match a supported image format." }, { status: 415 });
 
+  let optimized: Awaited<ReturnType<typeof optimizeUpload>>;
+  try {
+    optimized = await optimizeUpload(bytes, file.type);
+  } catch {
+    return NextResponse.json({ error: "The image could not be decoded or exceeds the supported image dimensions." }, { status: 415 });
+  }
+
   const timestamp = Math.floor(Date.now() / 1000).toString();
   const folder = "rokteck-cms";
   const params = { folder, public_id: randomUUID(), timestamp };
   const cloudForm = new FormData();
-  cloudForm.set("file", new Blob([bytes], { type: file.type }), `${params.public_id}.${extension}`);
+  cloudForm.set("file", new Blob([optimized.bytes], { type: optimized.contentType }), `${params.public_id}.${optimized.extension}`);
   cloudForm.set("api_key", apiKey);
   cloudForm.set("timestamp", timestamp);
   cloudForm.set("folder", folder);
