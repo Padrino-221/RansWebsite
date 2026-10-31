@@ -792,6 +792,8 @@ header.site-header .site-brand small { color: #4d5c76 !important; }
 /* Raise the foreground image without scaling it; keep mobile focused on copy and CTAs. */
 .hero-visual-person { transform: translateY(-34px) !important; }
 .hero-visual-stage { overflow: visible !important; }
+/* Keep the decorative strokes behind the cutout so they cannot cross the subject's face. */
+.hero-visual-doodle { z-index: 1; }
 @media (max-width: 767px) {
   .hero-visual-stage { display: none !important; }
 }
@@ -891,6 +893,18 @@ header.site-header .site-brand small { color: #4d5c76 !important; }
 .cms-field { display: flex; flex-direction: column; gap: 7px; margin: 12px 0; color: #475467; font-size: 13px; font-weight: 700; text-transform: capitalize; }
 .cms-field-hint { color: #667085; font-size: 12px; font-weight: 400; text-transform: none; }
 .cms-field input, .cms-field textarea { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid #cfd6e2; border-radius: 2px; outline-color: #1742bd; background: #fff; color: #172033; font: 400 14px/1.5 inherit; text-transform: none; }
+.cms-password-control { position: relative; display: block; }
+.cms-password-control input { padding-right: 46px; }
+.cms-password-toggle { position: absolute; top: 50%; right: 5px; display: grid; width: 34px; height: 34px; transform: translateY(-50%); place-items: center; border: 0; background: transparent; color: #586273; cursor: pointer; }
+.cms-password-toggle:hover { color: #143cb7; }
+.cms-password-toggle:focus-visible { outline: 2px solid #1742bd; outline-offset: 1px; }
+.cms-password-panel { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 20px; padding: 22px max(32px, calc((100vw - 1536px) / 2)); border-bottom: 1px solid #dce2ec; background: #fff; }
+.cms-password-panel-heading { grid-column: 1 / -1; }
+.cms-password-panel-heading h2 { margin: 0; color: #172033; font-size: 20px; }
+.cms-password-panel-heading p { margin: 6px 0 0; color: #667085; font-size: 13px; }
+.cms-password-panel .cms-field { margin: 8px 0; }
+.cms-password-panel-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.cms-password-panel-actions .cms-message { margin: 0; }
 .cms-field textarea { resize: vertical; }
 .cms-array-item { margin: 12px 0; border: 1px solid #e0e5ed; background: white; }
 .cms-array-summary { display: flex; min-height: 52px; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 15px; color: #233049; font-size: 14px; font-weight: 700; cursor: pointer; list-style: none; }
@@ -963,6 +977,8 @@ header.site-header .site-brand small { color: #4d5c76 !important; }
   .cms-editor { padding: 24px 16px; }
   .cms-editor-heading { align-items: flex-start; flex-direction: column; }
   .cms-login { padding: 28px 22px; }
+  .cms-password-panel { grid-template-columns: 1fr; gap: 0; padding: 18px 16px; }
+  .cms-password-panel-heading, .cms-password-panel-actions { grid-column: auto; }
   .cms-upload { grid-template-columns: 48px minmax(0, 1fr); gap: 10px; }
   .cms-upload-preview { width: 48px; height: 48px; }
   .cms-upload-button { grid-column: 2; justify-self: start; }

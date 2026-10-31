@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CmsImageUpload } from "@/components/CmsImageUpload";
 import { SiteIcon } from "@/components/SiteIcon";
-import { ChevronDown, Plus } from "lucide-react";
+import { ChevronDown, Eye, EyeOff, Plus } from "lucide-react";
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
 const lucideIconOptions = ["BadgeCheck", "BarChart3", "BrainCircuit", "BriefcaseBusiness", "Clock3", "Cloud", "Code2", "Cpu", "DatabaseBackup", "Gauge", "Headset", "Network", "ShieldCheck", "Sparkles", "Trophy"];
@@ -97,7 +97,13 @@ export function AdminEditor() {
   const [configured, setConfigured] = useState<boolean | null>(null);
   const [authenticated, setAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [changePasswordOpen, setChangePasswordOpen] = useState(false);
+  const [currentAdminPassword, setCurrentAdminPassword] = useState("");
+  const [newAdminPassword, setNewAdminPassword] = useState("");
+  const [confirmAdminPassword, setConfirmAdminPassword] = useState("");
+  const [passwordMessage, setPasswordMessage] = useState("");
   const [content, setContent] = useState<JsonValue | null>(null);
   const [active, setActive] = useState("");
   const [message, setMessage] = useState("");
@@ -160,10 +166,24 @@ export function AdminEditor() {
   async function logout() {
     await fetch("/api/admin/logout", { method: "POST" }); setAuthenticated(false); setContent(null); setMessage("");
   }
+  async function changeAdminPassword(event: React.FormEvent) {
+    event.preventDefault(); setPasswordMessage("");
+    if (newAdminPassword.length < 12) { setPasswordMessage("Choose a password with at least 12 characters."); return; }
+    if (newAdminPassword !== confirmAdminPassword) { setPasswordMessage("The new passwords do not match."); return; }
+    setBusy(true);
+    try {
+      const response = await fetch("/api/admin/password", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ currentPassword: currentAdminPassword, newPassword: newAdminPassword }) });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error ?? "Password change failed.");
+      setCurrentAdminPassword(""); setNewAdminPassword(""); setConfirmAdminPassword("");
+      setPasswordMessage("Password changed successfully.");
+    } catch (error) { setPasswordMessage(error instanceof Error ? error.message : "Password change failed."); }
+    finally { setBusy(false); }
+  }
 
   if (configured === null) return <main className="cms-loading">Loading the website editor…</main>;
   if (!configured) return <main className="cms-login-wrap"><form className="cms-login" onSubmit={setupPassword}><p className="detail-eyebrow">ROKTECK WEBSITE</p><h1>Set admin password</h1><p>Create the password for this local website editor. It must be at least 12 characters and will be stored as a salted hash.</p><label className="cms-field"><span>New password</span><input type="password" autoComplete="new-password" value={password} onChange={event => setPassword(event.target.value)} required minLength={12} /></label><label className="cms-field"><span>Confirm password</span><input type="password" autoComplete="new-password" value={confirmPassword} onChange={event => setConfirmPassword(event.target.value)} required minLength={12} /></label>{message && <p className="cms-message cms-error">{message}</p>}<button className="detail-button" disabled={busy}>{busy ? "Setting password…" : "Set password"}</button><p className="cms-setup-note">For a deployed website, configure <code>CMS_ADMIN_PASSWORD</code> on the server.</p></form></main>;
-  if (!authenticated) return <main className="cms-login-wrap"><form className="cms-login" onSubmit={login}><p className="detail-eyebrow">ROKTECK WEBSITE</p><h1>Content editor</h1><p>Sign in to update the pages and content on your website.</p><label className="cms-field"><span>Admin password</span><input type="password" autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /></label>{message && <p className="cms-message cms-error">{message}</p>}<button className="detail-button" disabled={busy}>{busy ? "Signing in…" : "Sign in"}</button></form></main>;
+  if (!authenticated) return <main className="cms-login-wrap"><form className="cms-login" onSubmit={login}><p className="detail-eyebrow">ROKTECK WEBSITE</p><h1>Content editor</h1><p>Sign in to update the pages and content on your website.</p><label className="cms-field"><span>Admin password</span><span className="cms-password-control"><input type={showPassword ? "text" : "password"} autoComplete="current-password" value={password} onChange={event => setPassword(event.target.value)} required /><button type="button" className="cms-password-toggle" onClick={() => setShowPassword(value => !value)} aria-label={showPassword ? "Hide password" : "Show password"} aria-pressed={showPassword}>{showPassword ? <EyeOff size={18} aria-hidden="true" /> : <Eye size={18} aria-hidden="true" />}</button></span></label>{message && <p className="cms-message cms-error">{message}</p>}<button className="detail-button" disabled={busy}>{busy ? "Signing in…" : "Sign in"}</button></form></main>;
   const current = content && typeof content === "object" && !Array.isArray(content) ? content[active] : null;
   const onChange = (path: (string | number)[], value: JsonValue) => setContent(previous => previous ? setAtPath(previous, path, value) : previous);
   const onRemove = (path: (string | number)[]) => setContent(previous => previous ? removeAtPath(previous, path) : previous);
@@ -194,5 +214,5 @@ export function AdminEditor() {
     }
     return setAtPath(previous, path, [...array, addition]);
   });
-  return <main className="cms-shell"><header className="cms-topbar"><a className="cms-brand" href="/">ROKTECK <span>CONTENT STUDIO</span></a><div><a href="/" target="_blank" rel="noreferrer">View website <SiteIcon name="ArrowUpRight" size={15} /></a><button onClick={logout}>Sign out</button></div></header><div className="cms-layout"><aside className="cms-sidebar"><p>WEBSITE CONTENT</p>{sections.map(section => <button key={section} className={active === section ? "is-active" : ""} onClick={() => { setActive(section); setMessage(""); }}>{section.replace(/([A-Z])/g, " $1")}</button>)}</aside><section className="cms-editor"><div className="cms-editor-heading"><div><p className="detail-eyebrow">CONTENT MANAGEMENT</p><h1>Edit {active.replace(/([A-Z])/g, " $1")}</h1><p>Changes apply to the public website after you save.</p></div><button className="detail-button" onClick={save} disabled={busy}>{busy ? "Saving…" : "Save changes"}</button></div>{message && <p className={`cms-message ${message.startsWith("Changes saved") ? "cms-success" : "cms-error"}`}>{message}</p>}{current && <div className="cms-fields"><ContentNode name={active} value={current} path={[active]} onChange={onChange} onAdd={onAdd} onRemove={onRemove} onUpload={uploadImage} /></div>}</section></div></main>;
+  return <main className="cms-shell"><header className="cms-topbar"><a className="cms-brand" href="/">ROKTECK <span>CONTENT STUDIO</span></a><div><a href="/" target="_blank" rel="noreferrer">View website <SiteIcon name="ArrowUpRight" size={15} /></a><button onClick={() => { setChangePasswordOpen(value => !value); setPasswordMessage(""); }}>{changePasswordOpen ? "Close password settings" : "Change password"}</button><button onClick={logout}>Sign out</button></div></header>{changePasswordOpen && <form className="cms-password-panel" onSubmit={changeAdminPassword}><div className="cms-password-panel-heading"><h2>Change admin password</h2><p>Use at least 12 characters. Your current session will stay signed in.</p></div><label className="cms-field"><span>Current password</span><input type="password" autoComplete="current-password" value={currentAdminPassword} onChange={event => setCurrentAdminPassword(event.target.value)} required /></label><label className="cms-field"><span>New password</span><input type="password" autoComplete="new-password" value={newAdminPassword} onChange={event => setNewAdminPassword(event.target.value)} required minLength={12} /></label><label className="cms-field"><span>Confirm new password</span><input type="password" autoComplete="new-password" value={confirmAdminPassword} onChange={event => setConfirmAdminPassword(event.target.value)} required minLength={12} /></label><div className="cms-password-panel-actions"><button className="detail-button" disabled={busy}>{busy ? "Updating…" : "Update password"}</button>{passwordMessage && <p className={`cms-message ${passwordMessage.startsWith("Password changed") ? "cms-success" : "cms-error"}`}>{passwordMessage}</p>}</div></form>}<div className="cms-layout"><aside className="cms-sidebar"><p>WEBSITE CONTENT</p>{sections.map(section => <button key={section} className={active === section ? "is-active" : ""} onClick={() => { setActive(section); setMessage(""); }}>{section.replace(/([A-Z])/g, " $1")}</button>)}</aside><section className="cms-editor"><div className="cms-editor-heading"><div><p className="detail-eyebrow">CONTENT MANAGEMENT</p><h1>Edit {active.replace(/([A-Z])/g, " $1")}</h1><p>Changes apply to the public website after you save.</p></div><button className="detail-button" onClick={save} disabled={busy}>{busy ? "Saving…" : "Save changes"}</button></div>{message && <p className={`cms-message ${message.startsWith("Changes saved") ? "cms-success" : "cms-error"}`}>{message}</p>}{current && <div className="cms-fields"><ContentNode name={active} value={current} path={[active]} onChange={onChange} onAdd={onAdd} onRemove={onRemove} onUpload={uploadImage} /></div>}</section></div></main>;
 }
