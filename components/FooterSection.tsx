@@ -6,10 +6,24 @@ function footerHref(label: string) {
   const value = label.toLowerCase();
   if (value.includes("about")) return "/about";
   if (value.includes("service")) return "/service";
-  if (value.includes("blog")) return "/blog";
-  if (value.includes("project") || value.includes("brand")) return "/projects";
+  if (value.includes("blog") || value.includes("insight")) return "/blog";
+  if (value.includes("project")) return "/projects";
   if (value.includes("work")) return "/work";
-  return "/contact";
+  if (value.includes("contact")) return "/contact";
+  return null;
+}
+
+function socialProfile(value: string) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" && url.protocol !== "http:") return null;
+    if (url.pathname === "/") return null;
+    const host = url.hostname.replace(/^www\./, "");
+    const label = host === "x.com" || host === "twitter.com" ? "X" : host === "youtube.com" || host === "youtu.be" ? "YouTube" : host === "linkedin.com" ? "LinkedIn" : host === "instagram.com" ? "Instagram" : host;
+    return { href: url.href, label };
+  } catch {
+    return null;
+  }
 }
 
 export async function FooterSection() {
@@ -31,21 +45,20 @@ export async function FooterSection() {
               <span className="footer-brand-name">{content.site.brandName}<small>{content.site.tagline}</small></span>
             </a>
             <p>{footer.description}</p>
-            <div className="footer-socials">
-              {footer.social.map((social) => {
-                const network = social === "twitter" ? "x" : social;
-                const label = social === "twitter" ? "X" : social === "linkedin" ? "LinkedIn" : social.charAt(0).toUpperCase() + social.slice(1);
-                return <a key={social} href={`https://www.${network}.com/`} target="_blank" rel="noreferrer" aria-label={label}>{label}</a>;
-              })}
-            </div>
+            {footer.social.map(socialProfile).filter((social): social is NonNullable<typeof social> => social !== null).length > 0 && <div className="footer-socials">
+              {footer.social.map(socialProfile).filter((social): social is NonNullable<typeof social> => social !== null).map((social) => <a key={social.href} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}>{social.label}</a>)}
+            </div>}
           </div>
           <nav className="footer-link-group" aria-label="Services">
             <h2>Services</h2>
-            {footer.services.map((service) => <a key={service} href="/service">{service}</a>)}
+            {content.services.services.map((service) => <a key={service.id} href={`/service#service-${service.id}`}>{service.title}</a>)}
           </nav>
           <nav className="footer-link-group" aria-label="Explore">
             <h2>Explore</h2>
-            {footer.links.map((label) => <a key={label} href={footerHref(label)}>{label.toLowerCase().includes("brand") ? "Our Projects" : label}</a>)}
+            {footer.links.map((label) => {
+              const href = footerHref(label);
+              return href ? <a key={label} href={href}>{label}</a> : null;
+            })}
           </nav>
           <address className="footer-contact-block">
             <h2>Contact</h2>

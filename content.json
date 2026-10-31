@@ -62,7 +62,7 @@
     "secondaryTitle": "Empowering Business Through Innovation",
     "description": "Welcome to Rokteck where we specialise in delivering tailored technology and IT solutions designed to propel your business forward. From streamlining operations to and driving growth.",
     "ctaButtonText": "Get A Quote",
-    "watchDemoText": "Watch Demo Videos"
+    "watchDemoText": "View case studies"
   },
   "highlights": [
     {
@@ -275,7 +275,7 @@
           "Helpdesk Support (Limited Hours)",
           "Basic Cybersecurity Protection"
         ],
-        "buttonText": "Buy Now"
+        "buttonText": "Enquire now"
       },
       {
         "id": 2,
@@ -289,7 +289,7 @@
           "Advance Cybersecurity Protection",
           "Cloud Backup & Recovery"
         ],
-        "buttonText": "Buy Now"
+        "buttonText": "Enquire now"
       },
       {
         "id": 3,
@@ -303,7 +303,7 @@
           "Disaster Recovery Planning & Testing",
           "Onsite Support (as needed)"
         ],
-        "buttonText": "Buy Now"
+        "buttonText": "Enquire now"
       }
     ]
   },

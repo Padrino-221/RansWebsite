@@ -17,7 +17,7 @@ export async function HeroSection() {
           <p className="hero-description">{hero.description}</p>
           <div className="buttons hero-buttons">
             <a className="theme-btn1" href="/contact">{hero.ctaButtonText}<span><SiteIcon name="ArrowRight" /></span></a>
-            <a className="play-btn" href="#work"><span><SiteIcon name="Play" size={17} /></span>{hero.watchDemoText}</a>
+            <a className="play-btn" href="/projects"><span><SiteIcon name="ArrowUpRight" size={17} /></span>{hero.watchDemoText}</a>
           </div>
         </div>
         <div className="hero-visual-stage" data-aos="zoom-in" data-aos-delay="180">

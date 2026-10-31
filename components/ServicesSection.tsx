@@ -24,7 +24,7 @@ export async function ServicesSection() {
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </div>
-                <a href="/contact" className="service-go" aria-label={`Ask about ${item.title}`}><SiteIcon name="ArrowUpRight" /></a>
+                <a href={`/service#service-${item.id}`} className="service-go" aria-label={`View details for ${item.title}`}><SiteIcon name="ArrowUpRight" /></a>
               </article>
             ))}
           </div>

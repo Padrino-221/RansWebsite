@@ -14,7 +14,7 @@ export async function AboutSection() {
             <span className="section-kicker">{about.title}</span>
             <h2>{about.subtitle}</h2>
             <p>{about.description}</p>
-            <a className="text-link" href="/contact">Get to know us <SiteIcon name="ArrowUpRight" /></a>
+            <a className="text-link" href="/about">Get to know us <SiteIcon name="ArrowUpRight" /></a>
           </div>
           <div className="about-story-visual" data-aos="zoom-in" data-aos-delay="180">
             <img className="about-image-main" src={publicAssetPath(content.media.about.main)} alt="Technology team collaborating" />
