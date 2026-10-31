@@ -1188,6 +1188,15 @@ html.motion-ready [data-aos-delay="90"] { transition-delay: 90ms; }
 html.motion-ready [data-aos-delay="100"] { transition-delay: 100ms; }
 html.motion-ready [data-aos-delay="120"] { transition-delay: 120ms; }
 
+/* Keep the site navigation fixed while content scrolls beneath it. */
+header.site-header { position: fixed !important; inset: 0 0 auto; z-index: 1000; width: 100%; }
+.site-header + .hero1 { margin-top: 83px; }
+.site-header + .route-page { margin-top: 83px; }
+@media (max-width: 991px) {
+  .site-header + .hero1,
+  .site-header + .route-page { margin-top: 73px; }
+}
+
 /* Contact page: clear direct contact routes with a focused, editorial layout. */
 .contact-page { overflow: hidden; background: #fff; color: #172033; }
 .contact-page-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(220px, .55fr); align-items: end; gap: clamp(40px, 8vw, 120px); padding-top: clamp(66px, 8vw, 112px); padding-bottom: clamp(42px, 5vw, 68px); }
