@@ -40,20 +40,20 @@
   "media": {
     "sectionKicker": "assets/img/icons/span1.png",
     "hero": {
-      "team": "assets/img/hero/hero1-image1.png",
-      "person": "assets/img/hero/hero1-image2.png",
+      "team": "assets/img/generated/black-american-tech-team.png",
+      "person": "assets/img/generated/hero-black-american-it-professional.png",
       "communityCard": "assets/img/hero/hero1-image4.png",
       "doodleOne": "assets/img/shapes/header1-shape1.png",
       "doodleTwo": "assets/img/shapes/header1-shape2.png"
     },
     "about": {
-      "main": "assets/img/about/about1-img2.png",
-      "inset": "assets/img/about/about1-img1.png"
+      "main": "assets/img/generated/black-american-tech-team.png",
+      "inset": "assets/img/generated/black-american-business-leader.png"
     },
     "work": {
-      "primary": "assets/img/work/work-img2.png",
-      "smallOne": "assets/img/work/work-img1.png",
-      "smallTwo": "assets/img/work/work-img3.png"
+      "primary": "assets/img/generated/black-american-tech-team.png",
+      "smallOne": "assets/img/generated/black-american-it-engineer.png",
+      "smallTwo": "assets/img/generated/black-american-business-leader.png"
     }
   },
   "hero": {
@@ -160,6 +160,19 @@
           "Technical support",
           "Ongoing improvement"
         ]
+      },
+      {
+        "id": 6,
+        "icon": "Cctv",
+        "title": "CCTV Installation",
+        "description": "Plan and install CCTV systems to help you monitor entrances, work areas, and other important parts of your premises.",
+        "detail": "We assess your site, recommend camera positions and recording options, and install and configure a CCTV system suited to your premises. We also explain how to use the system and maintain its settings.",
+        "includes": [
+          "Site survey and camera placement plan",
+          "Supply, installation, and configuration",
+          "Recording and remote viewing setup",
+          "System handover and user guidance"
+        ]
       }
     ]
   },
@@ -189,23 +202,62 @@
     ]
   },
   "projects": {
-    "title": "Our Project",
-    "subtitle": "Driving Success Through Innovative IT Solution Project",
+    "title": "PROJECTS & CASE STUDIES",
+    "subtitle": "Illustrative case studies showing how practical IT services can address common business challenges.",
     "projects": [
       {
         "id": 1,
-        "image": "assets/img/work/project-img1.png",
-        "title": "Enterprise Resource Planning Implementation"
+        "slug": "secure-cloud-workspace",
+        "image": "assets/img/generated/black-american-tech-team.png",
+        "title": "A secure cloud workspace for a growing team",
+        "category": "Illustrative case study · Cloud and workplace",
+        "client": "Illustrative scenario",
+        "summary": "A growing professional services team needs staff to access shared work securely across office and remote locations.",
+        "challenge": "Files and collaboration tools have grown informally over time. Staff use different access practices, and the business has limited visibility into who can reach sensitive information.",
+        "approach": "Review the team's working patterns, organise shared information, and plan a cloud workspace around role-based access. Set up practical account safeguards and document how new starters and leavers should be managed.",
+        "outcome": "The team has a clearer structure for collaboration, more consistent access practices, and a documented process for maintaining the workspace as it grows.",
+        "deliverables": [
+          "Workspace and access requirements review",
+          "Role-based access and account safeguards",
+          "Shared information structure",
+          "Administrator handover and user guidance"
+        ]
       },
       {
         "id": 2,
-        "image": "assets/img/work/project-img2.png",
-        "title": "Enterprise Resource Planning Implementation"
+        "slug": "network-and-continuity-review",
+        "image": "assets/img/generated/black-american-it-engineer.png",
+        "title": "A more resilient network and recovery plan",
+        "category": "Illustrative case study · Infrastructure and continuity",
+        "client": "Illustrative scenario",
+        "summary": "A multi-site organisation wants to understand its network risks and prepare for disruption to essential systems.",
+        "challenge": "Network equipment and backup routines have changed over time, leaving incomplete documentation and uncertainty about recovery priorities when an outage affects staff or customer operations.",
+        "approach": "Map the key network components and business dependencies, review backup coverage, and agree which services should be restored first. Document escalation routes and a recovery sequence that the organisation can review and practise.",
+        "outcome": "The organisation has a clearer view of its infrastructure, named recovery priorities, and a practical plan for coordinating response and restoration.",
+        "deliverables": [
+          "Infrastructure and dependency overview",
+          "Backup coverage and recovery review",
+          "Prioritised service restoration plan",
+          "Incident roles and escalation guidance"
+        ]
       },
       {
         "id": 3,
-        "image": "assets/img/work/project-img3.png",
-        "title": "Enterprise Resource Planning Implementation"
+        "slug": "business-systems-modernisation",
+        "image": "assets/img/generated/black-american-business-leader.png",
+        "title": "Modernising everyday business systems",
+        "category": "Illustrative case study · Business systems",
+        "client": "Illustrative scenario",
+        "summary": "An operations team wants to reduce friction between its everyday business tools and make routine work easier to manage.",
+        "challenge": "Staff repeat manual steps between systems, ownership of data is unclear, and the current process makes it difficult to see where work is delayed or duplicated.",
+        "approach": "Document the existing workflow, identify the systems and information involved, then define a staged improvement plan. Prioritise practical integrations and reporting needs while accounting for staff training and safe changeover.",
+        "outcome": "The team has a shared view of its process, a prioritised modernisation roadmap, and clearer requirements for improving how its systems work together.",
+        "deliverables": [
+          "Workflow and systems discovery",
+          "Integration and reporting requirements",
+          "Prioritised delivery roadmap",
+          "Changeover and staff enablement plan"
+        ]
       }
     ]
   },
@@ -264,8 +316,8 @@
         "quote": "The team at Rokteck went above and beyond to understand our business needs and deliver a tailored IT solution that exceeded our expectations. Their expertise and dedication, and we couldn't be happier with the results.",
         "client": "Kelly Williamson",
         "role": "Client",
-        "imageSmall": "assets/img/testimonial/tes1-smoll-img.png",
-        "imageBig": "assets/img/testimonial/tes1-big-img.png"
+        "imageSmall": "assets/img/generated/black-american-business-leader.png",
+        "imageBig": "assets/img/generated/black-american-business-leader.png"
       },
       {
         "id": 2,
@@ -284,7 +336,7 @@
       {
         "id": 1,
         "slug": "demystifying-blockchain",
-        "image": "assets/img/blog/blog-img1.png",
+        "image": "assets/img/generated/black-american-business-leader.png",
         "author": "John William",
         "date": "Feb 25, 2024",
         "title": "Demystifying Blockchain: How It's Revolutionising Industries.",
@@ -294,7 +346,7 @@
       {
         "id": 2,
         "slug": "cybersecurity-essentials",
-        "image": "assets/img/blog/blog-img2.png",
+        "image": "assets/img/generated/black-american-it-engineer.png",
         "author": "John William",
         "date": "Feb 25, 2024",
         "title": "Cybersecurity Essentials: Protecting Your Business ",
@@ -304,7 +356,7 @@
       {
         "id": 3,
         "slug": "remote-collaboration-tools",
-        "image": "assets/img/blog/blog-img3.png",
+        "image": "assets/img/generated/black-american-tech-team.png",
         "author": "John William",
         "date": "Feb 25, 2024",
         "title": "The Future of Work: Embracing Remote Collaboration Tools",
@@ -324,7 +376,7 @@
       "eyebrow": "OUR STORY",
       "title": "Technology should make good work easier.",
       "intro": "Rokteck partners with organisations to make technology dependable, useful, and easier to manage. Our work starts with listening to the people who rely on each system every day.",
-      "image": "assets/img/about/about1-img1.png",
+      "image": "assets/img/generated/black-american-tech-team.png",
       "metrics": [
         {
           "value": "People first",
@@ -442,7 +494,7 @@
       "eyebrow": "OUR METHOD",
       "title": "A considered route from challenge to change.",
       "intro": "Technology work goes better when people know what is happening and why. Our delivery approach gives each engagement a clear direction while leaving room to respond to what we learn.",
-      "image": "assets/img/work/work-img1.png",
+      "image": "assets/img/generated/black-american-it-engineer.png",
       "metrics": [
         {
           "value": "Shared plan",
@@ -505,7 +557,7 @@
       "eyebrow": "PROJECT EXPERIENCE",
       "title": "Make complex technology work manageable.",
       "intro": "Every organisation has different constraints. Our project work is shaped around the people, systems, and operational needs involved, with a focus on practical delivery and a clean handover.",
-      "image": "assets/img/work/project-img1.png",
+      "image": "assets/img/generated/black-american-tech-team.png",
       "metrics": [
         {
           "value": "Defined scope",
@@ -568,7 +620,7 @@
       "eyebrow": "PRACTICAL IT GUIDANCE",
       "title": "Clearer decisions for a changing technology landscape.",
       "intro": "Technology moves quickly, but good decisions still start with the same questions: what problem are we solving, who is affected, and how will we know the change is working?",
-      "image": "assets/img/blog/blog-img1.png",
+      "image": "assets/img/generated/black-american-business-leader.png",
       "metrics": [
         {
           "value": "Understand",

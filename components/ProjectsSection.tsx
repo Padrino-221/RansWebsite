@@ -1,6 +1,8 @@
 import { publicAssetPath } from "@/content";
 import { getSiteContent } from "@/lib/site-content";
 import { SiteIcon } from "@/components/SiteIcon";
+import { projectSlug } from "@/lib/projects";
+import Link from "next/link";
 
 export async function ProjectsSection() {
   const content = await getSiteContent();
@@ -14,7 +16,7 @@ export async function ProjectsSection() {
             <span className="section-kicker">{projects.title}</span>
             <h2>{projects.subtitle}</h2>
           </div>
-          <a className="text-link" href="/contact">Discuss a project <SiteIcon name="ArrowUpRight" /></a>
+          <Link className="text-link" href="/projects">View all projects <SiteIcon name="ArrowUpRight" /></Link>
         </header>
         <div className="project-mosaic">
           {projects.projects.map((project, index) => (
@@ -24,7 +26,7 @@ export async function ProjectsSection() {
                 <span>0{index + 1} / Case study</span>
                 <h3>{project.title}</h3>
               </div>
-              <a href="/contact" aria-label={`Discuss a project like ${project.title}`}><SiteIcon name="ArrowUpRight" /></a>
+              <Link href={`/projects/${projectSlug(project)}`} aria-label={`View ${project.title} case study`}><SiteIcon name="ArrowUpRight" /></Link>
             </article>
           ))}
         </div>

@@ -38,10 +38,19 @@ async function ensureSchema() {
 
 async function readLegacyContent(): Promise<SiteContent> {
   try {
-    return mergeContentWithDefaults(JSON.parse(await readFile(dataFile, "utf8")));
+    return replaceLegacyProjectExamples(mergeContentWithDefaults(JSON.parse(await readFile(dataFile, "utf8"))));
   } catch {
-    return mergeContentWithDefaults(fallback);
+    return replaceLegacyProjectExamples(mergeContentWithDefaults(fallback));
   }
+}
+
+function replaceLegacyProjectExamples(content: SiteContent): SiteContent {
+  const projects = content.projects.projects;
+  const untouchedLegacyExamples = projects.length === 3 && projects.every(project =>
+    project.title === "Enterprise Resource Planning Implementation"
+  );
+  if (!untouchedLegacyExamples) return content;
+  return { ...content, projects: { ...content.projects, projects: fallback.projects.projects } };
 }
 
 export const getSiteContent = cache(async () => readSiteContent());
@@ -51,7 +60,7 @@ export async function readSiteContent(): Promise<SiteContent> {
 
   await ensureSchema();
   const rows = await sql`SELECT content FROM site_content WHERE id = ${contentId} LIMIT 1`;
-  if (rows[0]) return mergeContentWithDefaults(rows[0].content);
+  if (rows[0]) return replaceLegacyProjectExamples(mergeContentWithDefaults(rows[0].content));
 
   // Seed a new Neon database from any existing local CMS content, otherwise the shipped defaults.
   const initialContent = await readLegacyContent();
@@ -84,6 +93,21 @@ export async function writeSiteContent(value: unknown) {
         const slug = slugify(String(post.slug || post.title || ""));
         if (!slug) throw new ContentValidationError("Each blog post needs a title or URL slug before saving.");
         if (seen.has(slug)) throw new ContentValidationError(`The blog URL “${slug}” is used more than once. Give each post a unique slug.`);
+        seen.add(slug);
+      }
+    }
+  }
+  const projectsContent = root.projects;
+  if (projectsContent && typeof projectsContent === "object" && !Array.isArray(projectsContent)) {
+    const projects = (projectsContent as Record<string, unknown>).projects;
+    if (Array.isArray(projects)) {
+      const seen = new Set<string>();
+      for (const item of projects) {
+        if (!item || typeof item !== "object" || Array.isArray(item)) continue;
+        const project = item as Record<string, unknown>;
+        const slug = slugify(String(project.slug || project.title || ""));
+        if (!slug) throw new ContentValidationError("Each project needs a title or URL slug before saving.");
+        if (seen.has(slug)) throw new ContentValidationError(`The project URL “${slug}” is used more than once. Give each project a unique slug.`);
         seen.add(slug);
       }
     }

@@ -1,11 +1,11 @@
-import { DetailPage } from "@/components/DetailPage";
+import { ProjectsIndexPage } from "@/components/ProjectsIndexPage";
 import { getSiteContent } from "@/lib/site-content";
 import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = (await getSiteContent()).detailPages.projects;
-  return pageMetadata({ title: page.title, description: page.intro, path: "/projects" });
+  const projects = (await getSiteContent()).projects;
+  return pageMetadata({ title: "Projects & Case Studies", description: projects.subtitle, path: "/projects" });
 }
 
-export default async function ProjectsPage() { const content = await getSiteContent(); return <DetailPage page={content.detailPages.projects} />; }
+export default function ProjectsPage() { return <ProjectsIndexPage />; }

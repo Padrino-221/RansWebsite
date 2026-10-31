@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogPostSlug } from "@/lib/blog";
+import { projectSlug } from "@/lib/projects";
 import { siteOrigin } from "@/lib/seo";
 import { getSiteContent } from "@/lib/site-content";
 
@@ -23,6 +24,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
     images: [new URL(post.image, `${siteOrigin}/`).toString()],
   }));
+  const projectPages: MetadataRoute.Sitemap = content.projects.projects.map(project => ({
+    url: `${siteOrigin}/projects/${encodeURIComponent(projectSlug(project))}`,
+    changeFrequency: "monthly",
+    priority: 0.7,
+    images: [new URL(project.image, `${siteOrigin}/`).toString()],
+  }));
 
-  return [...pages, ...articles];
+  return [...pages, ...articles, ...projectPages];
 }

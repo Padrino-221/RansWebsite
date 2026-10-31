@@ -1,14 +1,14 @@
 import {
   ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, BadgeCheck, BarChart3,
   BrainCircuit, BriefcaseBusiness, Clock3, Cloud, Code2, Cpu,
-  DatabaseBackup, Gauge, Headset, Network, Play, ShieldCheck, Sparkles,
+  Cctv, DatabaseBackup, Gauge, Headset, Network, Play, ShieldCheck, Sparkles,
   Trophy, type LucideIcon,
 } from "lucide-react";
 
 const icons: Record<string, LucideIcon> = {
   ArrowLeft, ArrowRight, ArrowUp, ArrowUpRight, BadgeCheck, BarChart3,
   BrainCircuit, BriefcaseBusiness, Clock3, Cloud, Code2, Cpu,
-  DatabaseBackup, Gauge, Headset, Network, Play, ShieldCheck, Sparkles, Trophy,
+  Cctv, DatabaseBackup, Gauge, Headset, Network, Play, ShieldCheck, Sparkles, Trophy,
 };
 
 export function SiteIcon({ name, size = 18, strokeWidth = 2, className }: {

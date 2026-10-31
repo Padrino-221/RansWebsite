@@ -6,7 +6,7 @@ import { SiteIcon } from "@/components/SiteIcon";
 import { ChevronDown, Eye, EyeOff, Plus } from "lucide-react";
 
 type JsonValue = string | number | boolean | null | JsonValue[] | { [key: string]: JsonValue };
-const lucideIconOptions = ["BadgeCheck", "BarChart3", "BrainCircuit", "BriefcaseBusiness", "Clock3", "Cloud", "Code2", "Cpu", "DatabaseBackup", "Gauge", "Headset", "Network", "ShieldCheck", "Sparkles", "Trophy"];
+const lucideIconOptions = ["BadgeCheck", "BarChart3", "BrainCircuit", "BriefcaseBusiness", "Cctv", "Clock3", "Cloud", "Code2", "Cpu", "DatabaseBackup", "Gauge", "Headset", "Network", "ShieldCheck", "Sparkles", "Trophy"];
 
 function clone<T,>(value: T): T { return JSON.parse(JSON.stringify(value)) as T; }
 function setAtPath(root: JsonValue, path: (string | number)[], value: JsonValue): JsonValue {
@@ -210,6 +210,23 @@ export function AdminEditor() {
         title: "New blog post",
         excerpt: "Add a short introduction for this article.",
         body: "Write the article content here. Separate paragraphs with a blank line.",
+      };
+    }
+    if (path.join(".") === "projects.projects") {
+      const ids = array.map(item => item && typeof item === "object" && !Array.isArray(item) ? Number(item.id) || 0 : 0);
+      const nextId = Math.max(0, ...ids) + 1;
+      addition = {
+        id: nextId,
+        slug: `project-${nextId}`,
+        image: "assets/img/work/project-img1.png",
+        title: "New project",
+        category: "Case study",
+        client: "",
+        summary: "",
+        challenge: "",
+        approach: "",
+        outcome: "",
+        deliverables: [],
       };
     }
     return setAtPath(previous, path, [...array, addition]);
