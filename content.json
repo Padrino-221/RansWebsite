@@ -1,0 +1,660 @@
+{
+  "site": {
+    "title": "Rokteck IT Solutions",
+    "brandName": "ROKTECK",
+    "tagline": "IT SOLUTIONS",
+    "logo": "assets/img/logo/header-logo1.jpeg",
+    "navigation": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Services",
+        "href": "/service"
+      },
+      {
+        "label": "How we work",
+        "href": "/work"
+      },
+      {
+        "label": "Projects",
+        "href": "/projects"
+      },
+      {
+        "label": "Insights",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact",
+        "isContact": true
+      }
+    ],
+    "phone": "+233 (0)55 608 1290",
+    "secondaryPhone": "+233 (0)55 774 5116",
+    "email": "info@Rokteck.com",
+    "website": "www.rokteck.com",
+    "address": "Ghana"
+  },
+  "media": {
+    "sectionKicker": "assets/img/icons/span1.png",
+    "hero": {
+      "team": "assets/img/hero/hero1-image1.png",
+      "person": "assets/img/hero/hero1-image2.png",
+      "communityCard": "assets/img/hero/hero1-image4.png",
+      "doodleOne": "assets/img/shapes/header1-shape1.png",
+      "doodleTwo": "assets/img/shapes/header1-shape2.png"
+    },
+    "about": {
+      "main": "assets/img/about/about1-img2.png",
+      "inset": "assets/img/about/about1-img1.png"
+    },
+    "work": {
+      "primary": "assets/img/work/work-img2.png",
+      "smallOne": "assets/img/work/work-img1.png",
+      "smallTwo": "assets/img/work/work-img3.png"
+    }
+  },
+  "hero": {
+    "subtitle": "Rokteck Technology & IT Solution",
+    "mainTitle": "Transform Your Business With Next Generation IT Solutions",
+    "secondaryTitle": "Empowering Business Through Innovation",
+    "description": "Welcome to Rokteck where we specialise in delivering tailored technology and IT solutions designed to propel your business forward. From streamlining operations to and driving growth.",
+    "ctaButtonText": "Get A Quote",
+    "watchDemoText": "Watch Demo Videos"
+  },
+  "highlights": [
+    {
+      "icon": "hero-bottom-icon1.png",
+      "title": "24/7 Availability",
+      "detail": "Always ready to support"
+    },
+    {
+      "icon": "hero-bottom-icon2.png",
+      "title": "2.5k Case Solved",
+      "detail": "IT Solution case solved"
+    },
+    {
+      "icon": "hero-bottom-icon3.png",
+      "title": "150k Optimisation",
+      "detail": "Keywords into online"
+    },
+    {
+      "icon": "hero-bottom-icon4.png",
+      "title": "4x Award Winning",
+      "detail": "Always ready to support"
+    }
+  ],
+  "about": {
+    "title": "About Our Company",
+    "subtitle": "Discover Our Story Empowering Business Through Innovation",
+    "description": "Rokteck pioneering force in the realm of technology and IT solutions, dedicated to revolutionising the way businesses thrive in the digital age. Our approach is rooted in collaboration, transparency, and a relentless pursuit of excellence. We believe that by staying ahead of the curve and embracing change, we can help our clients stay ahead of competition.",
+    "features": [
+      "Dramatically re-engineer value added IT system.",
+      "Highlight any unique selling points or differentiators.",
+      "Incorporate visuals such as team photos shots."
+    ],
+    "discoverMore": "Discover More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Empower Your Business With Our Comprehensive Technology & IT Solutions",
+    "services": [
+      {
+        "id": 1,
+        "icon": "assets/img/icons/service-icon1.png",
+        "title": "Cloud Computing Solutions",
+        "description": "Plan cloud migrations, optimise existing infrastructure, or develop cloud-native services that scale with your business.",
+        "detail": "Move workloads to the cloud, improve the infrastructure you already have, or build cloud-native services that can scale with demand. We help you assess your current setup and choose a practical path for your organisation.",
+        "includes": [
+          "Cloud migration and setup",
+          "Infrastructure optimisation",
+          "Cloud-native solutions"
+        ]
+      },
+      {
+        "id": 2,
+        "icon": "assets/img/icons/service-icon2.png",
+        "title": "Data Analytics & Business Intelligence",
+        "description": "Build clearer reporting and business intelligence from your data so teams can spot patterns and make informed decisions.",
+        "detail": "Turn the information your business already holds into clearer reporting and more useful decisions. Rokteck helps teams assess their data needs and build analytics and business intelligence solutions around the questions they need to answer.",
+        "includes": [
+          "Data analytics",
+          "Business intelligence",
+          "Decision-ready reporting"
+        ]
+      },
+      {
+        "id": 3,
+        "icon": "assets/img/icons/service-icon3.png",
+        "title": "Cybersecurity & Compliance",
+        "description": "Strengthen security, reduce exposure to evolving cyber threats, and address compliance needs with practical safeguards.",
+        "detail": "Protect business systems and information with security measures chosen for your organisation. We help identify areas to improve, strengthen existing protections, and consider the compliance obligations relevant to your work.",
+        "includes": [
+          "Security reviews",
+          "Threat protection",
+          "Compliance support"
+        ]
+      },
+      {
+        "id": 4,
+        "icon": "assets/img/icons/service-icon4.png",
+        "title": "Software Development",
+        "description": "Design and build custom software, then integrate it with the tools your team already relies on.",
+        "detail": "Shape software around the way your business works. From a new application to connecting existing systems, we help translate a practical need into a maintainable software solution.",
+        "includes": [
+          "Custom software development",
+          "Systems integration",
+          "Application improvements"
+        ]
+      },
+      {
+        "id": 5,
+        "icon": "assets/img/icons/service-icon5.png",
+        "title": "IT Consulting & Support",
+        "description": "Get practical guidance, responsive IT support, and a plan for managing changing technology needs.",
+        "detail": "Get clear advice on technology decisions and dependable help with day-to-day IT needs. We work with your team to understand priorities, resolve challenges, and plan sensible next steps.",
+        "includes": [
+          "IT planning and advice",
+          "Technical support",
+          "Ongoing improvement"
+        ]
+      }
+    ]
+  },
+  "work": {
+    "title": "Best It Solution",
+    "subtitle": "Let's Elevate Your Business With Strategic IT Solutions",
+    "description": "At Rokteck, we understand that every business is unique, which is why we offer a range of flexible IT solutions designed to address your specific challenges and goals.",
+    "features": [
+      {
+        "id": 1,
+        "icon": "assets/img/icons/work-iocn1.png",
+        "title": "Network Infrastructure Solutions",
+        "description": "Build a reliable and secure network infrastructure that supports your business operations enables seamless"
+      },
+      {
+        "id": 2,
+        "icon": "assets/img/icons/work-iocn2.png",
+        "title": "Managed IT Services",
+        "description": "Focus on your core business activities while we take care of your IT needs with our managed IT services."
+      },
+      {
+        "id": 3,
+        "icon": "assets/img/icons/work-iocn3.png",
+        "title": "Data Backup & Disaster Recovery",
+        "description": "Protect your critical business data and ensure business continuity with our data backup and disaster solution."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Our Project",
+    "subtitle": "Driving Success Through Innovative IT Solution Project",
+    "projects": [
+      {
+        "id": 1,
+        "image": "assets/img/work/project-img1.png",
+        "title": "Enterprise Resource Planning Implementation"
+      },
+      {
+        "id": 2,
+        "image": "assets/img/work/project-img2.png",
+        "title": "Enterprise Resource Planning Implementation"
+      },
+      {
+        "id": 3,
+        "image": "assets/img/work/project-img3.png",
+        "title": "Enterprise Resource Planning Implementation"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Our Pricing Plan",
+    "subtitle": "Explore Our Flexible Pricing Plans",
+    "plans": [
+      {
+        "id": 1,
+        "name": "Basic Plan",
+        "price": "$129.9 / month",
+        "description": "Ideal for startups and small businesses looking get started essential IT services.",
+        "features": [
+          "Network Monitoring",
+          "Helpdesk Support (Limited Hours)",
+          "Basic Cybersecurity Protection"
+        ],
+        "buttonText": "Buy Now"
+      },
+      {
+        "id": 2,
+        "name": "Standard Plan",
+        "price": "$179.9 / month",
+        "description": "Perfect for growing businesses that require additional features and support.",
+        "isPopular": true,
+        "features": [
+          "24/7 Network Monitoring",
+          "Dedicated Helpdesk Support",
+          "Advance Cybersecurity Protection",
+          "Cloud Backup & Recovery"
+        ],
+        "buttonText": "Buy Now"
+      },
+      {
+        "id": 3,
+        "name": "Premium Plan",
+        "price": "$249.9 / month",
+        "description": "Tailored for larger enterprises with complex IT needs and stringent security.",
+        "features": [
+          "Customised Network Monitoring",
+          "Priority Helpdesk Support",
+          "Comprehensive Cybersecurity Suite",
+          "Disaster Recovery Planning & Testing",
+          "Onsite Support (as needed)"
+        ],
+        "buttonText": "Buy Now"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Testimonials",
+    "subtitle": "Discover What Our Clients Have To Say About Us",
+    "testimonials": [
+      {
+        "id": 1,
+        "quote": "The team at Rokteck went above and beyond to understand our business needs and deliver a tailored IT solution that exceeded our expectations. Their expertise and dedication, and we couldn't be happier with the results.",
+        "client": "Kelly Williamson",
+        "role": "Client",
+        "imageSmall": "assets/img/testimonial/tes1-smoll-img.png",
+        "imageBig": "assets/img/testimonial/tes1-big-img.png"
+      },
+      {
+        "id": 2,
+        "quote": "Rokteck helped us make sense of our IT priorities and put a clear plan in place. Their team was responsive throughout, and the changes have made our day-to-day work more reliable.",
+        "client": "Rokteck client",
+        "role": "Business owner",
+        "imageSmall": "",
+        "imageBig": ""
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog & Latest News",
+    "subtitle": "Latest News & Blog",
+    "posts": [
+      {
+        "id": 1,
+        "slug": "demystifying-blockchain",
+        "image": "assets/img/blog/blog-img1.png",
+        "author": "John William",
+        "date": "Feb 25, 2024",
+        "title": "Demystifying Blockchain: How It's Revolutionising Industries.",
+        "excerpt": "A practical look at distributed ledgers, where they can help, and the questions to ask before adopting one.",
+        "body": "Blockchain is often discussed as though it were a solution in itself. In practice, it is a way for several participants to maintain a shared record, with agreed rules for how entries are added and checked. Whether that is useful depends on the problem, the participants, and the data involved.\n\nFor a business, the first question is not which blockchain platform to choose. It is whether multiple parties need to coordinate records without relying on one organisation to maintain the only authoritative copy. If one trusted system owner already meets the need, a conventional database is often simpler to operate.\n\nBefore starting a pilot, define the information that belongs on the ledger, how identities and permissions will work, how corrections will be handled, and who will support the service. Also consider privacy, integration with existing systems, transaction costs, and the experience of the people expected to use it.\n\nA small, measured trial can help a team compare the proposed approach with a simpler alternative. Keep the success criteria tied to a real process improvement, and avoid putting confidential or personal information on a shared ledger without a careful assessment."
+      },
+      {
+        "id": 2,
+        "slug": "cybersecurity-essentials",
+        "image": "assets/img/blog/blog-img2.png",
+        "author": "John William",
+        "date": "Feb 25, 2024",
+        "title": "Cybersecurity Essentials: Protecting Your Business ",
+        "excerpt": "Build a stronger security routine around access, updates, backups, staff awareness, and a plan for incidents.",
+        "body": "Good security is a set of repeatable habits supported by systems that fit the way people work. Start by understanding which accounts, devices, and information would cause the greatest disruption if they were lost or misused. That inventory gives you a useful order for improvements.\n\nUse multi-factor authentication for important accounts, remove access promptly when responsibilities change, and keep devices and software updated. Backups should be protected from ordinary account compromise and tested so the team knows how restoration works.\n\nPeople also need a clear way to report suspicious messages or unusual activity without worrying about blame. A simple reporting route, short practical guidance, and occasional exercises can make response faster.\n\nWrite down who will make decisions during an incident, how systems can be isolated, and how staff and customers should be informed. Review the plan after changes to your systems and after exercises. Security practices should be reviewed against your organisation's actual risks and obligations."
+      },
+      {
+        "id": 3,
+        "slug": "remote-collaboration-tools",
+        "image": "assets/img/blog/blog-img3.png",
+        "author": "John William",
+        "date": "Feb 25, 2024",
+        "title": "The Future of Work: Embracing Remote Collaboration Tools",
+        "excerpt": "Choose collaboration tools around communication needs, shared work practices, accessibility, and security.",
+        "body": "Remote collaboration works best when teams agree how work moves between conversations, documents, and decisions. Adding another platform does not automatically make that process clearer. Begin with the moments that are difficult today: finding the latest file, knowing who owns a task, or deciding when a discussion needs a meeting.\n\nChoose tools that support those needs and connect sensibly with the systems people already use. Set expectations for where decisions are recorded, how quickly someone is expected to respond, and which topics deserve a live conversation. These agreements help reduce interruptions while keeping work visible.\n\nConsider accessibility, mobile use, identity management, retention, and how external collaborators will be invited. A small pilot with a representative group can uncover friction before a wider rollout.\n\nAfter launch, ask users what is easier and what still creates extra work. The goal is a dependable shared practice that helps people contribute from different places, not a collection of apps that needs constant attention."
+      }
+    ]
+  },
+  "cta": {
+    "title": "At Rokteck IT Solutions, We're Committed To Businesses",
+    "description": "Take the first step towards achieving your business goals by contacting us today. Schedule a consultation with one of our IT specialists to discuss your objectives and explore how our innovative solutions can propel.",
+    "button1Text": "Request a Consultation",
+    "button2Text": "Explore Solution"
+  },
+  "detailPages": {
+    "about": {
+      "eyebrow": "OUR STORY",
+      "title": "Technology should make good work easier.",
+      "intro": "Rokteck partners with organisations to make technology dependable, useful, and easier to manage. Our work starts with listening to the people who rely on each system every day.",
+      "image": "assets/img/about/about1-img1.png",
+      "metrics": [
+        {
+          "value": "People first",
+          "label": "We begin with the needs of the team using the technology."
+        },
+        {
+          "value": "Built to last",
+          "label": "We favour clear, supportable solutions over short-lived fixes."
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "HOW WE THINK",
+          "title": "Good technology starts with a clear understanding of the work.",
+          "body": "Before recommending a platform or changing an environment, we learn how your organisation operates, where delays happen, and what a better day should look like.",
+          "items": [
+            {
+              "title": "Listen before proposing",
+              "body": "We speak with decision makers and day-to-day users to understand constraints, priorities, and the outcomes that matter."
+            },
+            {
+              "title": "Keep decisions understandable",
+              "body": "We explain options in plain language so teams can make informed choices about cost, risk, and future support."
+            },
+            {
+              "title": "Stay accountable after launch",
+              "body": "We document changes and provide a clear route for ongoing support as your needs evolve."
+            }
+          ]
+        },
+        {
+          "eyebrow": "WHO WE SUPPORT",
+          "title": "A technology partner for teams at every stage.",
+          "body": "Whether you are formalising IT for the first time or improving an established environment, our role is to bring structure and practical expertise to the next step.",
+          "items": [
+            {
+              "title": "Growing organisations",
+              "body": "Create a stable foundation for new people, locations, and services."
+            },
+            {
+              "title": "Busy internal teams",
+              "body": "Add specialist capacity and share the operational load."
+            },
+            {
+              "title": "Leaders planning change",
+              "body": "Turn business goals into a sequence of achievable technology decisions."
+            }
+          ]
+        }
+      ],
+      "closingTitle": "Let’s understand what better technology looks like for your team.",
+      "closingText": "Start with a conversation about your priorities, current setup, and the changes you are considering.",
+      "closingButton": "Talk to our team"
+    },
+    "services": {
+      "eyebrow": "ROKTECK SERVICES",
+      "title": "Technology services for the work your business needs to do.",
+      "intro": "Explore Rokteck’s cloud, analytics, cybersecurity, software development, and IT consulting services. Each is shaped around your current systems, team, and goals.",
+      "image": "assets/img/service/service-details-img.png",
+      "metrics": [
+        {
+          "value": "Plan",
+          "label": "Agree the result, scope, and ownership before work begins."
+        },
+        {
+          "value": "Deliver",
+          "label": "Make changes with clear communication and documented handover."
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "A PRACTICAL STARTING POINT",
+          "title": "Start with the technology challenge in front of you.",
+          "body": "Whether you are modernising infrastructure, improving reporting, reducing security risks, building software, or strengthening IT operations, we begin by understanding the outcome you need.",
+          "items": [
+            {
+              "title": "Understand the current setup",
+              "body": "Review the systems, information, or processes involved and identify the constraints that matter."
+            },
+            {
+              "title": "Choose a practical solution",
+              "body": "Match the right service to your needs, with a clear scope, priorities, and delivery plan."
+            },
+            {
+              "title": "Measure and improve",
+              "body": "Review the result with your team and identify sensible next steps as needs evolve."
+            }
+          ]
+        },
+        {
+          "eyebrow": "CONNECTED TECHNOLOGY",
+          "title": "Bring connected parts of IT together.",
+          "body": "Many business needs cross service boundaries. Cloud platforms, secure access, reliable data, and well-integrated software work best when planned together.",
+          "items": [
+            {
+              "title": "Infrastructure and cloud",
+              "body": "Build a dependable foundation for the applications and services your organisation relies on."
+            },
+            {
+              "title": "Security at every layer",
+              "body": "Consider protection, access, and compliance as part of the solution from the start."
+            },
+            {
+              "title": "Data and applications",
+              "body": "Connect useful business information with software and reporting that supports better decisions."
+            }
+          ]
+        }
+      ],
+      "closingTitle": "Not sure where to start?",
+      "closingText": "Describe the issue or goal, and we will help identify a sensible first step.",
+      "closingButton": "Discuss a requirement"
+    },
+    "work": {
+      "eyebrow": "OUR METHOD",
+      "title": "A considered route from challenge to change.",
+      "intro": "Technology work goes better when people know what is happening and why. Our delivery approach gives each engagement a clear direction while leaving room to respond to what we learn.",
+      "image": "assets/img/work/work-img1.png",
+      "metrics": [
+        {
+          "value": "Shared plan",
+          "label": "Everyone understands the outcome and responsibilities."
+        },
+        {
+          "value": "Steady progress",
+          "label": "Decisions and dependencies are visible as work moves forward."
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "THE ENGAGEMENT",
+          "title": "Four practical stages keep the work on track.",
+          "body": "The level of detail changes with the project, but the core rhythm stays consistent: understand the situation, agree a route, make the change, and learn from the result.",
+          "items": [
+            {
+              "title": "01 · Discover",
+              "body": "Review the current environment, hear from the people involved, and agree what needs to improve."
+            },
+            {
+              "title": "02 · Plan",
+              "body": "Set priorities, responsibilities, timing, and a safe way to handle risks or dependencies."
+            },
+            {
+              "title": "03 · Deliver",
+              "body": "Carry out the agreed work in manageable steps and keep stakeholders informed."
+            },
+            {
+              "title": "04 · Improve",
+              "body": "Confirm the outcome, capture lessons, and identify any useful next actions."
+            }
+          ]
+        },
+        {
+          "eyebrow": "WORKING TOGETHER",
+          "title": "Your team stays part of the decision making.",
+          "body": "We bring technical guidance and delivery discipline. Your team brings the business context that makes the solution useful. We make room for both throughout the engagement.",
+          "items": [
+            {
+              "title": "Regular check-ins",
+              "body": "Resolve questions early and avoid surprises late in the work."
+            },
+            {
+              "title": "Clear ownership",
+              "body": "Know which decisions sit with Rokteck and which need input from your team."
+            },
+            {
+              "title": "A supported handover",
+              "body": "Leave with the information and context needed to use the change confidently."
+            }
+          ]
+        }
+      ],
+      "closingTitle": "Have a change in mind?",
+      "closingText": "We can help you define the first stage and decide whether it is the right time to proceed.",
+      "closingButton": "Plan a conversation"
+    },
+    "projects": {
+      "eyebrow": "PROJECT EXPERIENCE",
+      "title": "Make complex technology work manageable.",
+      "intro": "Every organisation has different constraints. Our project work is shaped around the people, systems, and operational needs involved, with a focus on practical delivery and a clean handover.",
+      "image": "assets/img/work/project-img1.png",
+      "metrics": [
+        {
+          "value": "Defined scope",
+          "label": "Agree what is included and how progress will be reviewed."
+        },
+        {
+          "value": "Operational fit",
+          "label": "Plan changes around the way teams need to work."
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "TYPICAL PROJECT FOCUS",
+          "title": "Examples of work we can shape to your environment.",
+          "body": "These are common project themes, not client case studies. The scope and outcome for your organisation would be agreed during discovery.",
+          "items": [
+            {
+              "title": "Modernise a workplace",
+              "body": "Review devices, identity, collaboration tools, and onboarding so staff can work securely across locations."
+            },
+            {
+              "title": "Strengthen continuity",
+              "body": "Assess backup and recovery arrangements, identify gaps, and document a recovery process your team can follow."
+            },
+            {
+              "title": "Prepare for a cloud move",
+              "body": "Map dependencies, compare suitable hosting options, and plan a staged transition with clear rollback points."
+            },
+            {
+              "title": "Improve service operations",
+              "body": "Clarify support routes, recurring incidents, and system ownership to make day-to-day IT easier to manage."
+            }
+          ]
+        },
+        {
+          "eyebrow": "PROJECT PRINCIPLES",
+          "title": "The work should leave your team in a stronger position.",
+          "body": "A successful project includes more than installation. It should also leave people with understandable documentation, agreed responsibilities, and confidence in the next steps.",
+          "items": [
+            {
+              "title": "Manage risk",
+              "body": "Surface dependencies and plan for business continuity before implementation begins."
+            },
+            {
+              "title": "Transfer knowledge",
+              "body": "Give administrators and users the information they need to support the change."
+            },
+            {
+              "title": "Review the outcome",
+              "body": "Check the delivered work against the agreed goals and record any follow-up."
+            }
+          ]
+        }
+      ],
+      "closingTitle": "Planning a technology project?",
+      "closingText": "Share the change you are considering and the constraints you need to work within.",
+      "closingButton": "Discuss your project"
+    },
+    "insights": {
+      "eyebrow": "PRACTICAL IT GUIDANCE",
+      "title": "Clearer decisions for a changing technology landscape.",
+      "intro": "Technology moves quickly, but good decisions still start with the same questions: what problem are we solving, who is affected, and how will we know the change is working?",
+      "image": "assets/img/blog/blog-img1.png",
+      "metrics": [
+        {
+          "value": "Understand",
+          "label": "Build a useful picture of the choice in front of you."
+        },
+        {
+          "value": "Apply",
+          "label": "Turn guidance into steps that fit your organisation."
+        }
+      ],
+      "sections": [
+        {
+          "eyebrow": "TOPICS TO EXPLORE",
+          "title": "Start with the questions behind the headlines.",
+          "body": "Our insights focus on practical considerations for teams planning, operating, or improving their technology environments.",
+          "items": [
+            {
+              "title": "Security habits that scale",
+              "body": "Explore how access reviews, staff awareness, and incident preparation can become part of ordinary operations."
+            },
+            {
+              "title": "Cloud choices with context",
+              "body": "Compare convenience, control, cost, and responsibility before moving important workloads."
+            },
+            {
+              "title": "Data that supports decisions",
+              "body": "Consider ownership, quality, privacy, and access when building a more useful reporting practice."
+            },
+            {
+              "title": "AI with sensible guardrails",
+              "body": "Set expectations for approved tools, sensitive information, review, and human accountability."
+            }
+          ]
+        },
+        {
+          "eyebrow": "HOW TO USE THESE INSIGHTS",
+          "title": "Take the idea back to your own environment.",
+          "body": "General guidance is a starting point. Your systems, obligations, and team needs determine which actions make sense.",
+          "items": [
+            {
+              "title": "Identify the decision",
+              "body": "Write down the business need and what a useful result would look like."
+            },
+            {
+              "title": "Check your constraints",
+              "body": "Consider budget, current systems, skills, security, and any relevant requirements."
+            },
+            {
+              "title": "Choose a small next step",
+              "body": "Test assumptions or gather missing information before committing to a wider change."
+            }
+          ]
+        }
+      ],
+      "closingTitle": "Want to talk through a specific question?",
+      "closingText": "Bring your context and we can explore the options with you.",
+      "closingButton": "Ask a question"
+    }
+  },
+  "footer": {
+    "logo": "assets/img/logo/header-logo1.jpeg",
+    "description": "At Rokteck IT Solutions, we're dedicated to delivering innovative technology solutions tailored to meet the unique needs of businesses like yours.",
+    "services": [
+      "Cloud Computing Solution",
+      "Cybersecurity & Compliance",
+      "Software Development",
+      "IT Consulting & Support"
+    ],
+    "links": [
+      "About Us",
+      "Our Services",
+      "Blog & News",
+      "Brand assets",
+      "Contact Us"
+    ],
+    "contact": {
+      "phone": "+233 (0)55 774 5116",
+      "phone2": "+233 (0)55 608 1290",
+      "email": "info@rokteck.com",
+      "address": "info@Rokteck.com"
+    },
+    "social": [
+      "linkedin",
+      "twitter",
+      "youtube",
+      "instagram"
+    ]
+  }
+}

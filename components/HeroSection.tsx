@@ -1,0 +1,36 @@
+import { publicAssetPath } from "@/content";
+import { getSiteContent } from "@/lib/site-content";
+import { SiteIcon } from "@/components/SiteIcon";
+
+export async function HeroSection() {
+  const content = await getSiteContent();
+  const hero = content.hero;
+  const titleParts = hero.mainTitle.split(/(IT Solutions)/i);
+
+  return (
+    <section className="hero1">
+      <div className="hero-layout container">
+        <div className="hero-copy" data-aos="fade-right">
+            <span className="section-kicker">{hero.subtitle}</span>
+          <h1>{titleParts.map((part, index) => part.toLowerCase() === "it solutions" ? <span key={index}>{part}</span> : part)}</h1>
+          <p className="hero-description">{hero.description}</p>
+          <div className="buttons hero-buttons">
+            <a className="theme-btn1" href="/contact">{hero.ctaButtonText}<span><SiteIcon name="ArrowRight" /></span></a>
+            <a className="play-btn" href="#work"><span><SiteIcon name="Play" size={17} /></span>{hero.watchDemoText}</a>
+          </div>
+        </div>
+        <div className="hero-visual-stage" data-aos="zoom-in" data-aos-delay="180">
+          <img className="hero-visual-team" src={publicAssetPath(content.media.hero.team)} alt="Business team collaborating" />
+          <img className="hero-visual-person" src={publicAssetPath(content.media.hero.person)} alt="Technology professional with a laptop" fetchPriority="high" />
+          <img className="hero-visual-doodle hero-visual-doodle-one" src={publicAssetPath(content.media.hero.doodleOne)} alt="" />
+          <img className="hero-visual-doodle hero-visual-doodle-two" src={publicAssetPath(content.media.hero.doodleTwo)} alt="" />
+          <div className="hero-visual-experience-card" aria-label="8 Years Experience">
+            <strong>+8</strong>
+            <span><small>Years</small><b>Experience</b></span>
+          </div>
+          <img className="hero-visual-card hero-visual-community" src={publicAssetPath(content.media.hero.communityCard)} alt="12,000+ people already joined the technology and IT solution community" />
+        </div>
+      </div>
+    </section>
+  );
+}
