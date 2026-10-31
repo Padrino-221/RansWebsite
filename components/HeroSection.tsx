@@ -1,6 +1,7 @@
 import { publicAssetPath } from "@/content";
 import { getSiteContent } from "@/lib/site-content";
 import { SiteIcon } from "@/components/SiteIcon";
+import Image from "next/image";
 
 export async function HeroSection() {
   const content = await getSiteContent();
@@ -20,8 +21,8 @@ export async function HeroSection() {
           </div>
         </div>
         <div className="hero-visual-stage" data-aos="zoom-in" data-aos-delay="180">
-          <img className="hero-visual-team" src={publicAssetPath(content.media.hero.team)} alt="Business team collaborating" />
-          <img className="hero-visual-person" src={publicAssetPath(content.media.hero.person)} alt="Technology professional with a laptop" fetchPriority="high" />
+          <Image className="hero-visual-team" src={publicAssetPath(content.media.hero.team)} alt="Business team collaborating" width={1536} height={1024} sizes="(max-width: 767px) 94vw, (max-width: 991px) 50vw, 460px" quality={75} />
+          <Image className="hero-visual-person" src={publicAssetPath(content.media.hero.person)} alt="Technology professional with a laptop" width={1024} height={1536} sizes="(max-width: 767px) 68vw, (max-width: 991px) 55vw, 530px" quality={75} preload />
           <img className="hero-visual-doodle hero-visual-doodle-one" src={publicAssetPath(content.media.hero.doodleOne)} alt="" />
           <img className="hero-visual-doodle hero-visual-doodle-two" src={publicAssetPath(content.media.hero.doodleTwo)} alt="" />
           <div className="hero-visual-experience-card" aria-label="8 Years Experience">

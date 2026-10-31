@@ -7,7 +7,13 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'assets.img',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/drxxvp2ef/image/upload/**',
+      },
     ],
+    formats: ['image/webp'],
   },
 };
 
